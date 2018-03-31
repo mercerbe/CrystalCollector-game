@@ -23,10 +23,11 @@ body {
 #wins,
 #losses {
   color: blue;
+  font-size: 20px;
 }
 
 .playerButtonArea {
-  margin-bottom: 5%;
+  margin-bottom: 8%;
 }
 
 .gameButtons {
@@ -50,6 +51,7 @@ body {
   width: 40%;
   padding: 20px 30px;
   font-family: 'Berkshire Swash', cursive;
+  font-size: 20px;
 }
 
 .userButton:hover {
