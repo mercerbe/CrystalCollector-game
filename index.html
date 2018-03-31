@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="assets/css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <title>Crystal Game</title>
 </head>
 <!-- TODO:
@@ -29,28 +30,33 @@ pseudocode:
     <p>Click On Crystals To Collect Points And Match The Score!</p>
   </div>
 
+  <div class="container">
   <div class="gameArea">
     <h2 class="gameVariable">Score To Match: </h2>
       <p id="generatedScore">N/A</p>
     <h2 class"gameVariable">Your Score: </h2>
       <p id="userScore">0</p>
+    <h2 class="gameVariable">Wins: </h2>
+      <p id="wins">0</p>
+    <h2 class="gameVariable">Losses: </h2>
+      <p id="losses">0</p>
 
-    <div class="buttonArea">
+    <div class="playerButtonArea">
       <button id="crystalOne" class="gameButtons" value=""><img class="crystalImages" src="assets/images/crystal.png" alt="crystal"></button>
       <button id="crystalTwo" class="gameButtons" value=""><img class="crystalImages" src="assets/images/ruby.png" alt="ruby"></button>
       <button id="crystalThree" class="gameButtons" value=""><img class="crystalImages" src="assets/images/topaz.png" alt="topaz"></button>
       <button id="crystalFour" class="gameButtons" value=""><img class="crystalImages" src="assets/images/saphire.png" alt="saphire"></button>
     </div>
   </div>
-<br>
-  <div class="userButtons">
+  <div class="buttonArea">
     <button class="userButton" type="button" name="button">Restart</button>
     <button class="userButton" type="button" name="button">Pause</button>
   </div>
 </div>
+</div>
 
 
   <footer>&copyBenMercerCodes</footer>
-  <script type="text/javascript" src="game.js"></script>
+  <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 </html>
