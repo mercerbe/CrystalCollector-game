@@ -11,14 +11,43 @@ pseudocode:
 - variable (mathfloor mathrandom) for the winning score
 - create 4 buttons as images with crystals
 - each crystal button has specific amount of points attatched to click that adds to players score
+- crystal scores need to be randomly generated when new game starts
 - check for win/loss if players score === random generated winning score or players score > winning score
 - only show crytal values in console.log()
 - startGame function refires if player wins or loses
 - new random score generated on each startGame
 - log wins/ losses on page as player repeats startGame
 - random winning score between 19-120
-- crystal values between 1-12  -->
+- crystal values between 1-12
+-refer to calculator activity in class for math   -->
 <body>
+  <div class="wrapper">
+  <div class="header">
+    <h1>Crystal Collector</h1>
+    <p>Click On Crystals To Collect Points And Match The Score!</p>
+  </div>
+
+  <div class="gameArea">
+    <h2 class="gameVariable">Score To Match: </h2>
+      <p id="generatedScore"></p>
+    <h2 class"gameVariable">Your Score: </h2>
+      <p id="userScore"></p>
+
+    <div class="buttonArea">
+      <button id="crystalOne" class="gameButtons" value=""><img class="cyrstalImages" src="assets/images/crystal.png" alt="crystal"></button>
+      <button id="crystalTwo" class="gameButtons" value=""><img class="cyrstalImages" src="assets/images/ruby.png" alt="ruby"></button>
+      <button id="crystalThree" class="gameButtons" value=""><img class="cyrstalImages" src="assets/images/topaz.png" alt="topaz"></button>
+      <button id="crystalFour" class="gameButtons" value=""><img class="cyrstalImages" src="assets/images/saphire.png" alt="saphire"></button>
+    </div>
+  </div>
+
+  <div class="userButtons">
+    <button type="button" name="button">Restart Game</button>
+    <button type="button" name="button">Pause</button>
+  </div>
+</div>
+
+
 
 </body>
 </html>
