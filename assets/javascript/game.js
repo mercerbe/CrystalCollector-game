@@ -9,17 +9,22 @@ var crystalTwo;
 var crystalThree;
 var crystalFour;
 
-
-//HTML
-//document.getElementById("wins").innerHTML = wins;
-//document.getElementById("losses").innerHTML = losses;
-//document.getElementById("userScore").innerHTML = userScore;
-//document.getElementById("generatedScore").innerHTML = generatedScore;
-
-
-
 //Functions
+function checkWin(){
+  if (+$("#userScore").text() === +$("#generatedScore").text()) {
+    wins++;
+    document.getElementById("wins").innerHTML = wins;
+    setTimeout(function(){alert("You Win!");}, 200);
+    //restart game automatically
+  };
+  if (+$("#userScore").text() > +$("#generatedScore").text()) {
+    losses++;
+    document.getElementById("losses").innerHTML = losses;
+    setTimeout(function(){alert("You Lose!");}, 200);
+    //restart game automatically
+  };
 
+};
 
 
 //Initialize Game
@@ -61,6 +66,8 @@ $("#crystalOne").on("click", function(){
   $("#userScore").text(addOne);
   $("#userScore").attr("value", addOne);
   console.log("Your Score is: " + addOne);
+  //check win (if userScore = generatedScore)
+  checkWin();
 });
 
 
@@ -69,6 +76,8 @@ $("#crystalTwo").on("click", function(){
   $("#userScore").text(addTwo);
   $("#userScore").attr("value", addTwo);
   console.log("Your Score is: " + addTwo);
+  //check win (if userScore = generatedScore)
+  checkWin();
 });
 
 $("#crystalThree").on("click", function(){
@@ -76,6 +85,8 @@ $("#crystalThree").on("click", function(){
   $("#userScore").text(addThree);
   $("#userScore").attr("value", addThree);
   console.log("Your Score is: " + addThree);
+  //check win (if userScore = generatedScore)
+  checkWin();
 });
 
 $("#crystalFour").on("click", function(){
@@ -83,25 +94,18 @@ $("#crystalFour").on("click", function(){
   $("#userScore").text(addFour);
   $("#userScore").attr("value", addFour)
   console.log("Your Score is: " + addFour);
+  //check win (if userScore = generatedScore)
+  checkWin();
 
 });
-
-//check win (if userScore = generatedScore)
-if ($("#userScore").text() === $("#generatedScore").text()) {
-  document.getElementById("wins").innerHTML = wins;
-  setTimeout(function(){alert("You Win!");}, 300);
-  wins++;
-};
-if ($("#userScore").text() > $("#generatedScore").text()) {
-  document.getElementById("losses").innerHTML = losses;
-  setTimeout(function(){alert("You Lose!");}, 300);
-  losses++;
-};
 
 //Restart button
 $("#restartButton").on("click", function() {
   location.reload(true);
 });
+
+//Pause button
+
 
 
 });
