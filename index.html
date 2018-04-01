@@ -37,7 +37,7 @@ pseudocode:
   <div class="gameArea">
     <section class="userInfo">
     <h2 class= "gameVariable">Match:
-      <p id="generatedScore">N/A</p>
+      <p id="generatedScore"></p>
     </h2>
     <h2 class= "gameVariable">Score:
       <p id="userScore">0</p>
@@ -51,6 +51,11 @@ pseudocode:
     </section>
 
     <section>
+      <h2>Timer:</h2>
+      <progress value="0" max="50" id="timer"></progress>
+    </section>
+
+    <section>
     <div class="playerButtonArea">
       <input id="crystalOne" class="gameButtons" type="image" src="assets/images/ruby.png" name="" value=""></input>
       <input id="crystalOne" class="gameButtons" type="image" src="assets/images/crystal.png" name="" value=""></input>
@@ -60,8 +65,8 @@ pseudocode:
     </section>
   </div>
   <div class="buttonArea">
-    <button class="userButton" type="button" name="button">Restart</button>
-    <button class="userButton" type="button" name="button">Pause</button>
+    <button id="restartButton" class="userButton" type="button" name="button">Restart</button>
+    <button id="pauseButton" class="userButton" type="button" name="button">Pause</button>
   </div>
 </div>
 </div>
