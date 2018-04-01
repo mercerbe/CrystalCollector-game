@@ -22,15 +22,34 @@ body {
 .header {
   background-color: #027a95;
   margin-top:0;
-  padding: 1% 0 1% 0;
+  padding: 3% 0 3% 0;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+
 }
 
+h1{
+  font-size: 45px;
+}
+
+.userInfo {
+  margin-bottom: 5%;
+}
+
+.gameVariable {
+  display: inline-block;
+  background-color: #027a95;
+  border-radius: 10px;
+  width: 20%;
+  padding: 5px;
+  font-size: 20px;
+}
 
 #generatedScore,
 #userScore,
 #wins,
 #losses {
-  color: blue;
+  color: #c09faa;
   font-size: 30px;
 }
 
@@ -41,13 +60,16 @@ body {
 
 .gameButtons {
   margin: 2%;
-  max-width: 200px;
-  min-width: 75px;
+  width: 25%;
+  max-width: 250px;
+  min-width: 150px;
   height: auto;
+  transition: 1s;
 }
 
 .gameButtons:hover {
   border: 0px black solid;
+  transform: scale(1.1);
 }
 
 .buttonArea {
@@ -59,10 +81,12 @@ body {
   padding: 20px 30px;
   font-family: 'Berkshire Swash', cursive;
   font-size: 20px;
+  transition: 0.5s;
+  border-radius: 10px;
 }
 
 .userButton:hover {
-  background-color: black;
+  background-color: #c09faa;
   color: white;
   border: none;
 }
@@ -75,4 +99,6 @@ left: 0;
 background-color: #c09faa;
 color: white;
 padding: 3% 0 3% 0;
+border-top-right-radius: 10px;
+border-top-left-radius: 10px;
 }
