@@ -14,31 +14,44 @@ function checkWin(){
   if (+$("#userScore").text() === +$("#generatedScore").text()) {
     wins++;
     document.getElementById("wins").innerHTML = wins;
-    setTimeout(function(){alert("You Win!");}, 200);
+    setTimeout(function(){alert("You Win!");}, 100);
     //restart game automatically
+
   };
   if (+$("#userScore").text() > +$("#generatedScore").text()) {
     losses++;
     document.getElementById("losses").innerHTML = losses;
-    setTimeout(function(){alert("You Lose!");}, 200);
+    setTimeout(function(){alert("You Lose!");}, 100);
     //restart game automatically
+
+  };
+  if (+$("#timer").attr("value") === 100) {
+    losses++;
+    document.getElementById("losses").innerHTML = losses;
+    setTimeout(function(){alert("Out Of Time! You Lose!");}, 100);
+    //restart game automatically
+
   };
 
 };
 
+function reset(){
+  //reset function here or maybe use onkeyevent to restart game after alerts?
+};
 
 //Initialize Game
+
 $(document).ready(function() {
 
 //timer
-var downloadTimer = setInterval(function timer(){
+var gameTimer = setInterval(function timer(){
     document.getElementById("timer").value = 100 - --timeleft;
     if (timeleft <= 0)
-      clearInterval(downloadTimer);
-  },1000);
+      clearInterval(gameTimer);
+  },300);
 
 //Generate Score btwn 19-120
-var generatedScore = Math.floor((Math.random() * 120) + 1);
+var generatedScore = Math.floor(Math.random() * (120 - 19 + 1) + 19);
 $("#generatedScore").append(generatedScore);
 console.log("Match: " + generatedScore);
 
@@ -96,7 +109,6 @@ $("#crystalFour").on("click", function(){
   console.log("Your Score is: " + addFour);
   //check win (if userScore = generatedScore)
   checkWin();
-
 });
 
 //Restart button
@@ -105,7 +117,13 @@ $("#restartButton").on("click", function() {
 });
 
 //Pause button
-
-
+$("#pauseButton").on("click", function(){
+  alert("Timer Paused...Press Return To Continue!")
+});
 
 });
+
+
+//notes
+//get timer to cause loss
+//reset for running game again
