@@ -1,3 +1,4 @@
+$(document).ready(function() {
 //Global Variables
 var wins = 0;
 var losses = 0;
@@ -10,12 +11,29 @@ var crystalThree;
 var crystalFour;
 
 //Functions
+
+//Initialize Game
+function startGame() {
+  userScore = 0;
+  $("#userScore").text(userScore);
+  $("#userScore").attr("value", userScore);
+  generatedScore = null;
+  $("#generatedScore").text(generatedScore);
+  $("#generatedScore").attr("value", generatedScore);
+  timeleft = 100;
+  var crystalOne = null;
+  var crystalTwo = null;
+  var crystalThree = null;
+  var crystalFour = null;
+
+//check for wins
 function checkWin(){
   if (+$("#userScore").text() === +$("#generatedScore").text()) {
     wins++;
     document.getElementById("wins").innerHTML = wins;
     setTimeout(function(){alert("You Win!");}, 100);
     //restart game automatically
+    startGame();
 
   };
   if (+$("#userScore").text() > +$("#generatedScore").text()) {
@@ -23,6 +41,7 @@ function checkWin(){
     document.getElementById("losses").innerHTML = losses;
     setTimeout(function(){alert("You Lose!");}, 100);
     //restart game automatically
+    startGame();
 
   };
   if (+$("#timer").attr("value") === 100) {
@@ -30,18 +49,10 @@ function checkWin(){
     document.getElementById("losses").innerHTML = losses;
     setTimeout(function(){alert("Out Of Time! You Lose!");}, 100);
     //restart game automatically
-
+    startGame();
   };
 
 };
-
-function reset(){
-  //reset function here or maybe use onkeyevent to restart game after alerts?
-};
-
-//Initialize Game
-
-$(document).ready(function() {
 
 //timer
 var gameTimer = setInterval(function timer(){
@@ -121,9 +132,13 @@ $("#pauseButton").on("click", function(){
   alert("Timer Paused...Press Return To Continue!")
 });
 
+};
+
+startGame();
+
 });
 
 
 //notes
 //get timer to cause loss
-//reset for running game again
+//on reset crystal values are getting added, twice, then 3 times... ect...
