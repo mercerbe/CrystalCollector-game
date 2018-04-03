@@ -66,11 +66,16 @@ h1{
   min-width: 150px;
   height: auto;
   transition: 1s;
+  border: none;
 }
 
 .gameButtons:hover {
   border: 0px black solid;
   transform: scale(1.1);
+}
+
+.gameButtons:focus {
+  outline: none;
 }
 
 .buttonArea {
@@ -90,6 +95,10 @@ h1{
   background-color: #c09faa;
   color: white;
   border: none;
+}
+
+.userButton:focus {
+  outline: none;
 }
 
 footer {
