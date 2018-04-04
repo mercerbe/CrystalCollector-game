@@ -5,10 +5,6 @@ var losses = 0;
 var userScore = 0;
 var generatedScore = 0;
 var timeleft = 100;
-var crystalOne;
-var crystalTwo;
-var crystalThree;
-var crystalFour;
 
 //Functions
 
@@ -25,34 +21,6 @@ function startGame() {
   var crystalTwo = null;
   var crystalThree = null;
   var crystalFour = null;
-
-//check for wins
-function checkWin(){
-  if (+$("#userScore").text() === +$("#generatedScore").text()) {
-    wins++;
-    document.getElementById("wins").innerHTML = wins;
-    setTimeout(function(){alert("You Win!");}, 100);
-    //restart game automatically
-    startGame();
-
-  };
-  if (+$("#userScore").text() > +$("#generatedScore").text()) {
-    losses++;
-    document.getElementById("losses").innerHTML = losses;
-    setTimeout(function(){alert("You Lose!");}, 100);
-    //restart game automatically
-    startGame();
-
-  };
-  if (+$("#timer").attr("value") === 100) {
-    losses++;
-    document.getElementById("losses").innerHTML = losses;
-    setTimeout(function(){alert("Out Of Time! You Lose!");}, 100);
-    //restart game automatically
-    startGame();
-  };
-
-};
 
 //timer
 var gameTimer = setInterval(function timer(){
@@ -83,6 +51,47 @@ var crystalFour = Math.floor((Math.random() * 12) + 1);
 $("#crystalFour").attr("value", crystalFour);
 console.log("Crystal Four: " + crystalFour);
 
+
+//Restart button
+$("#restartButton").on("click", function() {
+  location.reload(true);
+});
+
+//Pause button
+$("#pauseButton").on("click", function(){
+  alert("Timer Paused...Press Return To Continue!")
+});
+
+};
+
+
+//check for wins
+function checkWin(){
+  if (+$("#userScore").text() === +$("#generatedScore").text()) {
+    wins++;
+    document.getElementById("wins").innerHTML = wins;
+    setTimeout(function(){alert("You Win!");}, 100);
+    //restart game automatically
+    startGame();
+
+  };
+  if (+$("#userScore").text() > +$("#generatedScore").text()) {
+    losses++;
+    document.getElementById("losses").innerHTML = losses;
+    setTimeout(function(){alert("You Lose!");}, 100);
+    //restart game automatically
+    startGame();
+
+  };
+  if (+$("#timer").attr("value") === 100) {
+    losses++;
+    document.getElementById("losses").innerHTML = losses;
+    setTimeout(function(){alert("Out Of Time! You Lose!");}, 100);
+    //restart game automatically
+    startGame();
+  };
+
+};
 
 //User Score update
 $("#crystalOne").on("click", function(){
@@ -122,18 +131,6 @@ $("#crystalFour").on("click", function(){
   checkWin();
 });
 
-//Restart button
-$("#restartButton").on("click", function() {
-  location.reload(true);
-});
-
-//Pause button
-$("#pauseButton").on("click", function(){
-  alert("Timer Paused...Press Return To Continue!")
-});
-
-};
-
 startGame();
 
 });
@@ -141,4 +138,3 @@ startGame();
 
 //notes
 //get timer to cause loss
-//on reset crystal values are getting added, twice, then 3 times... ect...
