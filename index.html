@@ -10,20 +10,7 @@
   <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
   <title>Crystal Game</title>
 </head>
-<!-- TODO:
-pseudocode:
-- variable (mathfloor mathrandom) for the winning score
-- create 4 buttons as images with crystals
-- each crystal button has specific amount of points attatched to click that adds to players score
-- crystal scores need to be randomly generated when new game starts
-- check for win/loss if players score === random generated winning score or players score > winning score
-- only show crytal values in console.log()
-- startGame function refires if player wins or loses
-- new random score generated on each startGame
-- log wins/ losses on page as player repeats startGame
-- random winning score between 19-120
-- crystal values between 1-12
--refer to calculator activity in class for math   -->
+
 <body>
   <div class="wrapper">
   <div class="header">
@@ -53,7 +40,7 @@ pseudocode:
 
     <section>
       <h2>Timer:</h2>
-      <progress value="0" max="100" id="timer"></progress>
+      <span id="timer">60 Seconds Remaining</span>
     </section>
 
     <section>
