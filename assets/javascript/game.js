@@ -4,7 +4,7 @@ $(document).ready(function() {
   var losses = 0;
   var userScore = 0;
   var generatedScore = 0;
-  var time = 31;
+  var timeLeft = 30;
   var gameTimer = null;
 
   //Functions
@@ -23,7 +23,7 @@ $(document).ready(function() {
     var crystalFour = null;
 
     //reset timer
-    time = 31;
+    timeLeft = 30;
 
     //Generate Score btwn 19-120
     var generatedScore = Math.floor(Math.random() * (120 - 19 + 1) + 19);
@@ -61,15 +61,23 @@ $(document).ready(function() {
   };
 
   //timer
-  //$(".gameButtons").on("click", function(){
   var gameTimer = setInterval(timer, 1000);
+
   function timer() {
-    time = time-1;
-    if (time <= 0){
+    if (timeLeft == 0){
       clearInterval(gameTimer);
-      return;
+      setTimeout(function() {
+        alert("Out Of Time! You Lose!");
+      }, 100);
+      timeLeft == 30;
+      losses++;
+      document.getElementById("losses").innerHTML = losses;
+      startGame();
+    }else {
+        timeLeft = timeLeft-1;
+    $("#timer").html(timeLeft + " Seconds Remaining");
+    $("#timer").attr("value", timeLeft);
     }
-    $("#timer").html(time + " Seconds Remaining");
   };
 //});
   timer();
@@ -96,16 +104,6 @@ $(document).ready(function() {
       //restart game automatically
       startGame();
 
-    };
-    if (time <= 0) {
-
-      losses++;
-      document.getElementById("losses").innerHTML = losses;
-      setTimeout(function() {
-        alert("Out Of Time! You Lose!");
-      }, 100);
-      //restart game automatically
-      startGame();
     };
 
   };
