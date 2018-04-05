@@ -32,6 +32,11 @@ h1{
   font-size: 45px;
 }
 
+.timerArea {
+  font-size: 25px;
+  text-shadow: 0px 0px 10px #027a95;
+}
+
 .userInfo {
   margin-bottom: 5%;
 }
@@ -102,6 +107,9 @@ h1{
 }
 
 footer {
+font-family: monospace;
+text-shadow: 0px 0px 10px #027a95;
+font-size: 18px;
 width: 100%;
 position: absolute;
 bottom: 0;
