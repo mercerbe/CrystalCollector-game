@@ -73,10 +73,12 @@ $(document).ready(function() {
       losses++;
       document.getElementById("losses").innerHTML = losses;
       startGame();
+      gameTimer = setInterval(timer, 1000);
+      timer();
     }else {
-        timeLeft = timeLeft-1;
-    $("#timer").html(timeLeft + " Seconds Remaining");
-    $("#timer").attr("value", timeLeft);
+      $("#timer").html(timeLeft + " Seconds Remaining");
+      $("#timer").attr("value", timeLeft);
+        timeLeft--;
     }
   };
 //});
